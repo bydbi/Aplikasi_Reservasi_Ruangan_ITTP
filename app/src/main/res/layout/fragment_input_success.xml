@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="58dp"
+    android:paddingEnd="58dp"
+    tools:context=".view.home.user.InputSuccessFragment">
+
+    <ImageView
+        android:id="@+id/iv_success"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/success"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp" />
+
+    <TextView
+        android:id="@+id/tv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permintaan Terkirim!"
+        android:textColor="@color/Color6"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iv_success"
+        android:layout_marginTop="30dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnKembali"
+        android:layout_below="@id/tv_success"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/Color4"
+        android:text="Kambali"
+        app:cornerRadius="10dp"
+        android:textColor="@color/Color6"/>
+
+</RelativeLayout>

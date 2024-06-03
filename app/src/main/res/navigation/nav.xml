@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/detailHistoriFragment"
+        android:name="com.app.logistikittp.view.history.user.DetailHistoryFragment"
+        android:label="fragment_detail_histori"
+        tools:layout="@layout/fragment_detail_history" />
+    <fragment
+        android:id="@+id/detailMenuFragment"
+        android:name="com.app.logistikittp.view.home.user.DetailMenuFragment"
+        android:label="fragment_detail_menu"
+        tools:layout="@layout/fragment_detail_menu" >
+        <action
+            android:id="@+id/action_detailMenuFragment_to_inputDataFragment"
+            app:destination="@id/inputDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historiFragment"
+        android:name="com.app.logistikittp.view.history.user.HistoryFragment"
+        android:label="fragment_histori"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historiFragment_to_detailHistoriFragment"
+            app:destination="@id/detailHistoriFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.app.logistikittp.view.home.user.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailMenuFragment"
+            app:destination="@id/detailMenuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notifFragment"
+            app:destination="@id/notifFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historiFragment"
+            app:destination="@id/historiFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputDataFragment"
+        android:name="com.app.logistikittp.view.home.user.InputDataFragment"
+        android:label="fragment_input_data"
+        tools:layout="@layout/fragment_input_data" >
+        <action
+            android:id="@+id/action_inputDataFragment_to_inputSuccessFragment"
+            app:destination="@id/inputSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/inputSuccessFragment"
+        android:name="com.app.logistikittp.view.home.user.InputSuccessFragment"
+        android:label="fragment_input_success"
+        tools:layout="@layout/fragment_input_success" >
+        <action
+            android:id="@+id/action_inputSuccessFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.app.logistikittp.view.authentication.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeAdminFragment"
+            app:destination="@id/homeAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notifFragment"
+        android:name="com.app.logistikittp.view.notif.NotifFragment"
+        android:label="fragment_notif"
+        tools:layout="@layout/fragment_notif" >
+        <action
+            android:id="@+id/action_notifFragment_to_detailHistoriFragment"
+            app:destination="@id/detailHistoriFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.app.logistikittp.view.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.app.logistikittp.view.authentication.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.app.logistikittp.view.splashscreen.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_homeAdminFragment"
+            app:destination="@id/homeAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historiAdminFragment"
+        android:name="com.app.logistikittp.view.history.admin.ArsipAdminFragment"
+        android:label="fragment_histori_admin"
+        tools:layout="@layout/fragment_arsip_admin" >
+        <action
+            android:id="@+id/action_historiAdminFragment_to_detailHistoryAdminFragment"
+            app:destination="@id/detailHistoryAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeAdminFragment"
+        android:name="com.app.logistikittp.view.home.admin.HomeAdminFragment"
+        android:label="fragment_home_admin"
+        tools:layout="@layout/fragment_home_admin" >
+        <action
+            android:id="@+id/action_homeAdminFragment_to_historiAdminFragment"
+            app:destination="@id/historiAdminFragment" />
+        <action
+            android:id="@+id/action_homeAdminFragment_to_prosesPeminjamanFragment"
+            app:destination="@id/prosesPeminjamanFragment" />
+        <action
+            android:id="@+id/action_homeAdminFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/prosesPeminjamanFragment"
+        android:name="com.app.logistikittp.view.home.admin.DetailRequestPeminjamanFragment"
+        android:label="fragment_proses_peminjaman"
+        tools:layout="@layout/fragment_detail_request_peminjaman" >
+        <action
+            android:id="@+id/action_prosesPeminjamanFragment_to_confirmationDialogFragment"
+            app:destination="@id/confirmationDialogFragment" />
+        <action
+            android:id="@+id/action_prosesPeminjamanFragment_to_historiAdminFragment"
+            app:destination="@id/historiAdminFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHistoryAdminFragment"
+        android:name="com.app.logistikittp.view.history.admin.DetailArsipAdminFragment"
+        android:label="DetailHistoryAdminFragment" />
+    <dialog
+        android:id="@+id/confirmationDialogFragment"
+        android:name="com.app.logistikittp.view.home.admin.ConfirmationDialogFragment"
+        android:label="fragment_confirmation_dialog"
+        tools:layout="@layout/fragment_confirmation_dialog" >
+        <action
+            android:id="@+id/action_confirmationDialogFragment_to_historiAdminFragment"
+            app:destination="@id/historiAdminFragment" />
+    </dialog>
+</navigation>

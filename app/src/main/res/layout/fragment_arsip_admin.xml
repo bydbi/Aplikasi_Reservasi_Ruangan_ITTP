@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.history.admin.ArsipAdminFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Color2">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Button Back"
+                    android:src="@drawable/arrow_left"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data Peminjaman"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/Color6"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintLeft_toRightOf="@id/btnBack"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <SearchView
+                    android:id="@+id/searchbox"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="35dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/custom_input"
+                    android:drawablePadding="12dp"
+                    android:ems="10"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                    android:queryHint="Cari"
+                    android:iconifiedByDefault="false"
+                    tools:ignore="Autofill,TextFields" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPeminjaman"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+        tools:listitem="@layout/custom_list_history" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnSortAndFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/Color3"
+        android:text="Sort &amp; Filter"
+        app:icon="@drawable/sorting"
+        app:iconTint="@color/Color6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/Color6"
+        app:rippleColor="@color/Color3"
+        android:textSize="14sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

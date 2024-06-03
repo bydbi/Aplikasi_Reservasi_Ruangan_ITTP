@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/Color9"
+    android:id="@+id/rlRiwayat"
+    android:padding="20dp"
+    android:layout_marginBottom="20dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvAsalPeminjam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HMIF"
+        android:textColor="@color/Color6"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRuangan"
+        android:layout_marginTop="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IOT 101"
+        android:textColor="@color/Color6"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_below="@id/tvAsalPeminjam" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tvTanggal"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
+        android:text="Kamis, 2 November 2023"
+        android:textColor="@color/Color6"
+        android:textSize="12sp"
+        android:layout_below="@id/tvRuangan" />
+
+    <TextView
+        android:id="@+id/tvWaktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18.00 - 21.00"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/Color6"
+        android:textSize="12sp"
+        android:layout_below="@id/tvTanggal" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:padding="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/Color9"
+    android:id="@+id/rlNotifikasi"
+    android:layout_marginBottom="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disetujui"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/Color3" />
+
+    <TextView
+        android:id="@+id/tvDeskripsi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Ruang IOT 101 - 103 berhasil dipinjam untuk Senin, 6 November 2023, Pukul 08:00 - 17:00."
+        android:layout_below="@id/tvStatus"
+        android:justificationMode="inter_word" />
+
+</RelativeLayout>

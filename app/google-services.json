@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "876835816277",
+    "firebase_url": "https://tugas-akhir-5fb14-default-rtdb.firebaseio.com",
+    "project_id": "tugas-akhir-5fb14",
+    "storage_bucket": "tugas-akhir-5fb14.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876835816277:android:e2dc977567b616bec465dc",
+        "android_client_info": {
+          "package_name": "com.app.logistikapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXDEhXif5UhPvgnD3vrvZYWgwZ7QujJiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876835816277:android:526c4cd47026ef4fc465dc",
+        "android_client_info": {
+          "package_name": "com.app.logistikittp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXDEhXif5UhPvgnD3vrvZYWgwZ7QujJiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

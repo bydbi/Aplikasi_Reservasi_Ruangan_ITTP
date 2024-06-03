@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LogistikITTP" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/Color2</item>
+        <item name="colorPrimaryVariant">@color/Color4</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/Color2</item>
+        <item name="colorSecondaryVariant">@color/Color4</item>
+        <item name="colorOnSecondary">@color/Color6</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.LogistikITTP" parent="Base.Theme.LogistikITTP" />
+</resources>
