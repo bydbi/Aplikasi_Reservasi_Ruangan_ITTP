@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:backgroundTint="@color/Color4"
-        android:text="Kambali"
+        android:text="Kembali"
         app:cornerRadius="10dp"
         android:textColor="@color/Color6"/>
 

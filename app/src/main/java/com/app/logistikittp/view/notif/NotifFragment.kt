@@ -27,7 +27,6 @@ class NotifFragment : Fragment() {
     private lateinit var notifikasiAdapter: NotifAdapter
     private val notifikasiList = mutableListOf<Notifikasi>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -69,6 +68,14 @@ class NotifFragment : Fragment() {
                         }
                         newNotifikasiList.sortByDescending { it.timestamp }
                         notifikasiAdapter.updateData(newNotifikasiList)
+
+                        if (newNotifikasiList.isEmpty()){
+                            binding.tvNoNotif.visibility = View.VISIBLE
+                            binding.rvNotif.visibility = View.GONE
+                        } else{
+                            binding.tvNoNotif.visibility = View.GONE
+                            binding.rvNotif.visibility = View.VISIBLE
+                        }
                     }
 
                     override fun onCancelled(error: DatabaseError) {
@@ -78,5 +85,4 @@ class NotifFragment : Fragment() {
             }
         }
     }
-
 }

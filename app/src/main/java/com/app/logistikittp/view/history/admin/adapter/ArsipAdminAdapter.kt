@@ -11,15 +11,15 @@ import java.util.Locale
 import android.os.Bundle
 import androidx.navigation.Navigation
 import com.app.logistikittp.R
-import com.app.logistikittp.databinding.CustomListHistoryBinding
+import com.app.logistikittp.databinding.CustomListArsipBinding
 
 class ArsipAdminAdapter(private val context: Context, private var historiList: MutableList<Booking>) :
     RecyclerView.Adapter<ArsipAdminAdapter.ViewHolder>() {
 
-    class ViewHolder(val binding: CustomListHistoryBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: CustomListArsipBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = CustomListHistoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val view = CustomListArsipBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
@@ -27,7 +27,13 @@ class ArsipAdminAdapter(private val context: Context, private var historiList: M
         val orderHistory = historiList[position]
         holder.binding.tvAsalPeminjam.text = orderHistory.asal_peminjam
         holder.binding.tvRuangan.text = "${orderHistory.gedung!!.toUpperCase()} ${orderHistory.ruangan}"
-        //Kamis, 2 November 2023
+
+        orderHistory.timestamp?.let {
+            val date = Date(it)
+            val format = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
+            holder.binding.tvWaktuPeminjaman.text = format.format(date)
+        }
+
         val convertWaktu = convertTanggal(orderHistory.tanggal_pinjam)
         holder.binding.tvTanggal.text = convertWaktu
         holder.binding.tvWaktu.text = orderHistory.waktu_pinjam

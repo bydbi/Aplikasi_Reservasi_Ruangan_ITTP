@@ -13,5 +13,6 @@ data class Booking(
     val nim_nik: String? = null,
     val nomor_hp: String? = null,
     val keterangan_acara: String? = null,
-    val surat_izin: String? = null
+    val surat_izin: String? = null,
+    val timestamp: Long? = null
 )

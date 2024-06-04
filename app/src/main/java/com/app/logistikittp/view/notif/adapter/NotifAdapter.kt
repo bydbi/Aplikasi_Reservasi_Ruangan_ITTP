@@ -10,6 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.logistikittp.R
 import com.app.logistikittp.data.model.Notifikasi
 import com.app.logistikittp.databinding.CustomListNotifikasiBinding
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class NotifAdapter(private val context: Context, private val notifikasiList: MutableList<Notifikasi>) :
     RecyclerView.Adapter<NotifAdapter.ViewHolder>() {
@@ -31,6 +34,13 @@ class NotifAdapter(private val context: Context, private val notifikasiList: Mut
             holder.binding.tvStatus.setTextColor(Color.parseColor("#71C4EF"))
         }
         holder.binding.tvDeskripsi.text = notifikasi.message
+
+        notifikasi.timestamp?.let {
+            val date = Date(it)
+            val format = SimpleDateFormat("dd MMM yyy, HH:mm", Locale.getDefault())
+            holder.binding.tvTimeStamp.text= format.format(date)
+        }
+
         holder.binding.rlNotifikasi.setOnClickListener{
             val bundle = Bundle()
             bundle.putString("idBooking", notifikasi.idBooking)

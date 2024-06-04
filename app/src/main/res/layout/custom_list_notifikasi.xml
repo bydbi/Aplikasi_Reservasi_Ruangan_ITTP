@@ -26,4 +26,16 @@
         android:layout_below="@id/tvStatus"
         android:justificationMode="inter_word" />
 
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDeskripsi"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:text="Timestamp notifikasi"
+        android:textColor="@color/Color5"
+        android:textSize="12sp" />
+
 </RelativeLayout>

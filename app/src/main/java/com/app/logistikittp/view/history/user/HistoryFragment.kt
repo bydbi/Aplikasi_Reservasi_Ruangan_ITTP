@@ -63,6 +63,12 @@ class HistoryFragment : Fragment() {
                             booking?.let { newHistoriList.add(it) }
                         }
                         historyAdapter.updateData(newHistoriList)
+
+                        if (newHistoriList.isEmpty()){
+                            binding.tvNoHistory.visibility = View.VISIBLE
+                        } else{
+                            binding.tvNoHistory.visibility = View.GONE
+                        }
                     }
 
                     override fun onCancelled(error: DatabaseError) {

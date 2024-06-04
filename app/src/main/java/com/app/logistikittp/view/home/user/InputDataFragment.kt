@@ -66,6 +66,7 @@ class InputDataFragment : Fragment() {
         }
 
         binding.btnKonfirmasi.setOnClickListener {
+            showProgressBar()
             val peminjam = binding.editPeminjam.text.toString()
             val asalPeminjam = binding.editAsalPeminjam.text.toString()
             val nimNik = binding.editNimNik.text.toString()
@@ -75,6 +76,7 @@ class InputDataFragment : Fragment() {
                 uploadPdfToFirebaseStorage(gedung, ruangan, tanggal, waktu, peminjam, asalPeminjam, nimNik, noHp, keterangan, suratIzinUri)
             } else {
                 Toast.makeText(requireContext(), "Data tidak lengkap", Toast.LENGTH_SHORT).show()
+                hideProgressBar()
             }
         }
 
@@ -148,6 +150,7 @@ class InputDataFragment : Fragment() {
                         }
                         storageRef.downloadUrl
                     }.addOnCompleteListener { task ->
+                        hideProgressBar()
                         if (task.isSuccessful) {
                             val downloadUri = task.result
                             updateBookingWithPdfUrl(gedung, ruangan, tanggal, waktu, peminjam, asalPeminjam, nimNik, noHp, keterangan, downloadUri.toString())
@@ -157,10 +160,12 @@ class InputDataFragment : Fragment() {
                     }
                 } ?: run {
                     Toast.makeText(requireContext(), "User ID not found", Toast.LENGTH_SHORT).show()
+                    hideProgressBar()
                 }
             }
         } ?: run {
             Toast.makeText(requireContext(), "No PDF file selected", Toast.LENGTH_SHORT).show()
+            hideProgressBar()
         }
     }
 
@@ -186,18 +191,22 @@ class InputDataFragment : Fragment() {
                     nim_nik = nimNik,
                     nomor_hp = noHp,
                     keterangan_acara = keterangan,
-                    surat_izin = pdfUrl
+                    surat_izin = pdfUrl,
+                    timestamp = System.currentTimeMillis()
                 )
 
                 newBookingRef.setValue(booking)
                     .addOnSuccessListener {
+                        hideProgressBar()
                         Log.d("InputDataFragment", "Booking success")
                         findNavController().navigate(R.id.action_inputDataFragment_to_inputSuccessFragment)
                     }
                     .addOnFailureListener { e ->
+                        hideProgressBar()
                         Log.e("InputDataFragment", "Booking failed", e)
                     }
             } ?: run {
+                hideProgressBar()
                 Log.e("InputDataFragment", "User ID is null or empty")
             }
         }
@@ -229,6 +238,15 @@ class InputDataFragment : Fragment() {
         }
         val colorStateList = ColorStateList.valueOf(color)
         binding.btnKonfirmasi.backgroundTintList = colorStateList
+    }
 
+    private fun showProgressBar(){
+        binding.progressBar.visibility = View.VISIBLE
+        binding.btnKonfirmasi.isEnabled = false
+    }
+
+    private fun hideProgressBar(){
+        binding.progressBar.visibility = View.GONE
+        binding.btnKonfirmasi.isEnabled = true
     }
 }

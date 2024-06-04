@@ -47,4 +47,25 @@
         android:textSize="12sp"
         android:layout_below="@id/tvTanggal" />
 
+    <TextView
+        android:id="@+id/tvstatusPeminjaman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWaktu"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:text="Status Peminjaman"
+        android:textColor="@color/Color3"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvWaktuPeminjaman"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Waktu Peminjaman"
+        android:textSize="12sp" />
 </RelativeLayout>

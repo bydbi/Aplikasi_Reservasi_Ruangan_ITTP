@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.app.logistikittp.data.model.Booking
@@ -14,7 +15,9 @@ import java.util.*
 class HistoryAdapter(private val context: Context, private val historiList: MutableList<Booking>) :
     RecyclerView.Adapter<HistoryAdapter.ViewHolder>() {
 
-    class ViewHolder(val binding: CustomListRiwayatBinding) : RecyclerView.ViewHolder(binding.root)
+    class ViewHolder(val binding: CustomListRiwayatBinding) : RecyclerView.ViewHolder(binding.root){
+        val tvStatusPeminjaman: TextView = binding.tvstatusPeminjaman
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = CustomListRiwayatBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,7 +28,16 @@ class HistoryAdapter(private val context: Context, private val historiList: Muta
         val orderHistory = historiList[position]
         holder.binding.tvAsalPeminjam.text = orderHistory.asal_peminjam
         holder.binding.tvRuangan.text = "${orderHistory.gedung!!.toUpperCase()} ${orderHistory.ruangan}"
-        //Kamis, 2 November 2023
+
+        orderHistory.timestamp?.let {
+            val date = Date(it)
+            val format = SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault())
+            holder.binding.tvWaktuPeminjaman.text = format.format(date)
+        }
+
+        val statusPeminjaman ="${orderHistory.status}"
+        holder.tvStatusPeminjaman.text = statusPeminjaman
+
         val convertWaktu = convertTanggal(orderHistory.tanggal_pinjam)
         holder.binding.tvTanggal.text = convertWaktu
         holder.binding.tvWaktu.text = orderHistory.waktu_pinjam
